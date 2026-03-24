@@ -1,0 +1,6 @@
+addr: "localhost:9090"
+timeout: 5
+concurrent: 3
+webhooks:
+  - "http://example.com/hook1"
+  - "http://example.com/hook2"
