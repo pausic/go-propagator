@@ -26,8 +26,8 @@ func main() {
 	wh := handler.NewWebhookHandler(logger)
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("GET /info", func(w http.ResponseWriter, r *http.Request) {
-		logger.Info("pinged")
+	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
 	})
 	mux.Handle("POST /webhook", wh)
 
