@@ -23,13 +23,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	wh := handler.NewWebhookHandler(logger)
+	webhookHandler := handler.NewWebhookHandler(logger, cfg)
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 	})
-	mux.Handle("POST /webhook", wh)
+	mux.Handle("POST /webhook", webhookHandler)
 
 	srv := &http.Server{
 		Addr:    cfg.Addr,
