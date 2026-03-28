@@ -1,0 +1,7 @@
+addr: "localhost:8080"
+timeout: 10
+concurrent: 5
+webhooks:
+  - "https://example.com/hook1"
+  - "https://example.com/hook2"
+  - "https://example.com/hook3"
