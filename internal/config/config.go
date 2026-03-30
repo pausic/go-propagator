@@ -32,5 +32,13 @@ func Load() (*Config, error) {
 		return nil, fmt.Errorf("parsing config file %s: %w", path, err)
 	}
 
+	if cfg.Concurrent == 0 {
+		cfg.Concurrent = 10
+	}
+
+	if cfg.Timeout == 0 {
+		cfg.Timeout = 10
+	}
+
 	return &cfg, nil
 }

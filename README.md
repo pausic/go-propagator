@@ -54,20 +54,18 @@ make build
 
 ```yaml
 addr: "localhost:8080"
-timeout: 10
-concurrent: 5
 webhooks:
   - "https://example.com/hook1"
   - "https://example.com/hook2"
   - "https://example.com/hook3"
 ```
 
-| Field | Description |
-|---|---|
-| `addr` | Listen address |
-| `timeout` | Shutdown timeout in seconds |
-| `concurrent` | Max parallel outbound requests |
-| `webhooks` | Target URLs to propagate to |
+| Field | Description | Default |
+|---|---|---|
+| `addr` | Listen address | — |
+| `timeout` | Shutdown timeout in seconds | `10` |
+| `concurrent` | Max parallel outbound requests | `10` |
+| `webhooks` | Target URLs to propagate to | — |
 
 Override config path via `CONFIG_PATH` env var.
 
